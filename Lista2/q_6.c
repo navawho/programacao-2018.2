@@ -6,7 +6,9 @@ int raizes(double a, double b, double c, double *px1, double *px2);
 
 int main(void)
 {
-	double a,b,c,d,*px1,*px2;
+	double a,b,c,d, x1, x2;
+	double *px1 = &x1;
+	double *px2 = &x2;
 	printf("Entre os coeficientes a, b e c, respectivamente\n");
 	scanf("%lf%lf%lf",&a,&b,&c);
 	if(a==0)
@@ -21,16 +23,16 @@ int main(void)
 		return 1;
 	}
 	int n;
-	n = raizes(a,b,c, *px1,*px2);
+	n = raizes(a,b,c, px1, px2);
 	printf("A quantidade de raizes eh: %d\n", n);
 	if(n==1)
 	{
-		printf("x1 = x2 = %lf\n", px1);
+		printf("x1 = x2 = %lf\n", *px1);
 	}
 	else
 	{
-		printf("x1 = %lf\n", px1);
-		printf("x2 = %lf\n", px2);
+		printf("x1 = %lf\n", *px1);
+		printf("x2 = %lf\n", *px2);
 	}
 
 	return 0;
