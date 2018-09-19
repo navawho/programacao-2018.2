@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-int melhor_tempo(v[n]);
+void melhor_tempo(v[n], int n);
 
 int main(void)
 {
@@ -8,23 +8,24 @@ int main(void)
 	printf("Digite a quantidade de voltas: \n");
 	scanf("%d",&n);
 	int v[n];
-	for (int i = 0; i < n-1; ++i)
+	for (int i = 0; i < n; ++i)
 	{
 		printf("Digite o tempo da volta %d", i+1);
 		scanf("%d", &v[i]);
 	}
-	melhor_tempo(v[n]);
+	melhor_tempo(v[n], n);
+
 	return 0;
 }
 
-int melhor_tempo(v[n])
+void melhor_tempo(v[n], n)
 {
-	for (int i = 0; i < n-2; ++i)
+	int melhor_tempo = v[0];
+	for (int i = 0; i < n-1; ++i)
 	{
-		int melhor_tempo;
-		if (v[i]>v[i+1])
+		if (v[i+1]>v[i])
 		{
-			melhor_tempo = v[i];
+			melhor_tempo = v[i+1];
 		}
 	}
 	printf("%d\n",melhor_tempo);
