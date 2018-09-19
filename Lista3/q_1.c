@@ -1,35 +1,35 @@
 #include <stdio.h>
 
-int main(void)
-{
-int a[5];
-int b[8];
-printf("Entre os valores do vetor a:\n");
-for (int i = 0; i < 4; ++i)
-{
-	int x;
-	scanf("%d\n",&x);
-	a[i] = x;
-}
-printf("Entre os valores do vetor b:\n");
-for (int i = 0; i < 7; ++i)
-{
-	int x;
-	scanf("%d\n",&x);
-	b[i] = x;
-}
-printf("Valores repetidos:\n");
-for (int c = 0; c < 7; ++c)
-{
-	for (int i = 0; i < 4; ++i)
+int repetido();
+
+int main(void){
+
+	int a[5], b[8], i, j;
+
+	for (int i = 0; i < 5; ++i)
 	{
-		if (b[c] == a[i])
-		{
-			printf("%d\n", b[c]);
-		}
+		printf("Entre o valor da posicao %d vetor 1:\n", i+1);
+		scanf("%d\n",&a[i]);
+		
 	}
-}
+
+	for (int i = 0; i < 8; ++i)
+	{
+		printf("Entre o valor da posicao %d do vetor 2:\n", i+1);
+		scanf("%d\n",&b[i]);
+
+	}
+
+	for (i=0; i<8; ++i){
+		for (j=0; j<5; ++j){
+			if(b[i]==a[j]){
+				printf("O valor %d estar repetido nos vetores\n", b[i]);
+			}
+		}
+
+	}
 
 
 	return 0;
+		
 }
