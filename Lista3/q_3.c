@@ -1,41 +1,44 @@
 #include <stdio.h>
+#include <stdlib.h>
 
-void melhor_tempo(int v[n], int n);
-void melhor_volta(int v[n], int n);
-void pior_tempo(int v[n], int n);
-void pior_volta(int v[n], int n);
-void tempo_medio(int v[n], int n);
+void melhor_tempo(int v[], int n);
+void melhor_volta(int v[], int n);
+void pior_tempo(int v[], int n);
+void pior_volta(int v[], int n);
+void tempo_medio(int v[], int n);
 
 int main(void)
 {
 	int n;
 	printf("Digite a quantidade de voltas: \n");
 	scanf("%d",&n);
-	int v[n];
+	int *v = (int*)malloc(n*sizeof(int));
 	for (int i = 0; i < n; ++i)
 	{
 		printf("Digite o tempo da volta %d:", i+1);
 		scanf("%d", &v[i]);
 	}
 	printf("Melhor tempo:\n");
-	melhor_tempo(v[n], n);
+	melhor_tempo(v, n);
 
 	printf("Melhor volta:\n");
-	melhor_volta(v[n], n);
+	melhor_volta(v, n);
 
 	printf("Pior tempo:\n");
-	pior_tempo(v[n], n);
+	pior_tempo(v, n);
 
 	printf("Pior volta:\n");
-	pior_volta(v[n], n);
+	pior_volta(v, n);
 
 	printf("Tempo médio:\n");
-	tempo_medio(v[n], n);
+	tempo_medio(v, n);
+
+	free(v);
 
 	return 0;
 }
 
-void melhor_tempo(v[n], n)
+void melhor_tempo(int v[],int n)
 {
 	int melhor_tempo = v[0];
 	for (int i = 0; i < n-1; ++i)
@@ -48,7 +51,7 @@ void melhor_tempo(v[n], n)
 	printf("%d\n",melhor_tempo);
 }
 
-void melhor_volta(v[n], n)
+void melhor_volta(int v[],int n)
 {
 	int melhor_volta = v[0];
 	for (int i = 0; i < n-1; ++i)
@@ -58,10 +61,10 @@ void melhor_volta(v[n], n)
 			melhor_volta = i+1;
 		}
 	}
-	printf("%d\n",melhor_tempo);
+	printf("%d\n",melhor_volta);
 }
 
-void pior_tempo(v[n, n])
+void pior_tempo(int v[],int n)
 {
 	int pior_tempo = v[0];
 	for (int i = 0; i < n-1; ++i)
@@ -74,7 +77,7 @@ void pior_tempo(v[n, n])
 	printf("%d\n",pior_tempo);
 }
 
-void pior_volta(v[n, n])
+void pior_volta(int v[],int n)
 {
 	int pior_volta = v[0];
 	for (int i = 0; i < n-1; ++i)
@@ -87,13 +90,12 @@ void pior_volta(v[n, n])
 	printf("%d\n",pior_volta);
 }
 
-void tempo_medio(v[n], n)
+void tempo_medio(int v[],int n)
 {
-	int tempo_medio;
 	int soma_voltas = 0;
 	for (int i = 0; i < n; ++i)
 	{
 		soma_voltas = soma_voltas + v[i];
 	}
-	tempo_medio = soma_voltas/n;
+	printf("%d\n",soma_voltas/n);
 }
