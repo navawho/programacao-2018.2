@@ -40,6 +40,7 @@ int main(void){
 
 	}
 	printf("\n");
+	free(vet);
 	return 0;
 }
 
