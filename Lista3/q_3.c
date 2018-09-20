@@ -13,6 +13,11 @@ int main(void)
 	printf("Digite a quantidade de voltas: \n");
 	scanf("%d",&n);
 	int *v = (int*)malloc(n*sizeof(int));
+	if(v==NULL)
+	{
+		printf("Memoria insuficiente");
+		return 1;
+	}
 	for (int i = 0; i < n; ++i)
 	{
 		printf("Digite o tempo da volta %d:", i+1);
