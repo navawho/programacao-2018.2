@@ -37,7 +37,7 @@ int main(void){
 }
 
 int** alocar_matriz(int Linha, int Coluna){
-	int **matriz = (int**)malloc(Linha+sizeof(int*));
+	int **matriz = (int**)malloc(Linha*sizeof(int*));
 	
 	int i, j;
 	for (i = 0; i < Linha; ++i){
